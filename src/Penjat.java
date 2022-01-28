@@ -11,11 +11,13 @@ public class Penjat {
         char letter;
         char [] incognitWord = new char [word.length()];
         for (int i = 0; i < word.length(); i++) {
-            incognitWord[i]='i';
+            incognitWord[i]= '_';
             System.out.print(incognitWord[i]);
         }
-        int count = 0;
-        while (count <5) {
+        System.out.println(" ");
+        int count = 5, correctLetter=0;
+        while (count >0) {
+            correctLetter=0;
             System.out.println("Dime una letra:");
             letter = sc.next().charAt(0);
 
@@ -23,16 +25,35 @@ public class Penjat {
                 if(letter==word.charAt(i)){
                     incognitWord[i] = letter;
                 }
-                    /*if (incognitWord[i]==null){m
+                System.out.print(incognitWord[i]);
+                if(incognitWord[i]==word.charAt(i)){
+                    correctLetter++;
+                }
 
-
-                    }else{
-                        System.out.println(incognitWord[i]);
-                    }*/
             }
+            int n=0;
+            for (int i = 0; i < word.length(); i++) {
+
+                if (letter==incognitWord[i]){
+                    n++;
+                }
+            }
+            if(n==0){
+                count--;
+                System.out.println("\nIncorrecto, te quedan " + count + " intentos.");
+
+            }
+            if (correctLetter==word.length()){
+                break;
+            }
+            System.out.println(" ");
 
         }
-
+        if(correctLetter==word.length()){
+            System.out.println("\nENHORABUENA!! HAS ACERTADO.");
+        }else{
+            System.out.println("HAS PERDIDO");
+        }
 
 
     }
