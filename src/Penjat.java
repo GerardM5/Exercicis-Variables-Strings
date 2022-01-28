@@ -23,7 +23,7 @@ public class Penjat {
                 if(letter==word.charAt(i)){
                     incognitWord[i] = letter;
                 }
-                    /*if (incognitWord[i]==null){
+                    /*if (incognitWord[i]==null){m
 
 
                     }else{
